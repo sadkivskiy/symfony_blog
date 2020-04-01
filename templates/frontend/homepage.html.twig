@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <script>
+        window.user = {{ user|raw }};
+    </script>
+
+    <div id="app" >
+        <blog-app entrypoint="{{ path('api_entrypoint') }}"></blog-app>
+    </div>
+{% endblock %}
