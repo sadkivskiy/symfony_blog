@@ -49,7 +49,7 @@ class UserResourceTest extends CustomApiTestCase
     public function testUpdateUser()
     {
         $client = self::createClient();
-        $user = $this->createUserAndLogIn($client, 'webvemon@example.com', 'foo', [
+        $user = $this->createUserAndLogIn($client, 'webvemon@i.ua', 'Pass13', [
             'firstName' => 'First',
             'lastName' => 'Last',
         ]);
@@ -82,11 +82,11 @@ class UserResourceTest extends CustomApiTestCase
     public function testGetUser()
     {
         $client = self::createClient();
-        $user = $this->createUser('webvemon@example.com', 'foo', [
+        $user = $this->createUser('webvemon@i.ua', 'Pass13', [
             'firstName' => 'First',
             'lastName' => 'Last',
         ]);
-        $user2 = $this->createUserAndLogIn($client, 'authenticated@example.com', 'foo', [
+        $user2 = $this->createUserAndLogIn($client, 'authenticated@example.com', 'Pass13', [
             'firstName' => 'First2',
             'lastName' => 'Last2',
         ]);
@@ -108,7 +108,7 @@ class UserResourceTest extends CustomApiTestCase
         $user = $em->getRepository(User::class)->find($user->getId());
         $user->setRoles(['ROLE_ADMIN']);
         $em->flush();
-        $this->logIn($client, $user->getEmail(), 'foo');
+        $this->logIn($client, $user->getEmail(), 'Pass13');
 
         $client->request('GET', '/api/users/'.$user->getId());
         $data = $client->getResponse()->toArray();

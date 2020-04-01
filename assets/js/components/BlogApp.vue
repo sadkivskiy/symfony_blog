@@ -1,5 +1,7 @@
 <template>
     <div id="wrapper">
+        <loginForm v-on:user-authenticated="onUserAuthenticated"></loginForm>
+
         <Header></Header>
 
         <section class="section">

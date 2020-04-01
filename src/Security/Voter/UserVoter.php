@@ -57,6 +57,7 @@ class UserVoter extends Voter
             return $attribute === 'CREATE';
         }
 
+
         // Admin has full access
         if ($this->security->isGranted('ROLE_ADMIN')) {
             return true;

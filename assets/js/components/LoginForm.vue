@@ -1,19 +1,18 @@
 <template>
-    <form v-on:submit.prevent="handleSubmit">
-        <div v-if="error" class="alert alert-danger">
-            {{ error }}
-        </div>
-        <div class="form-group">
+    <form v-on:submit.prevent="handleSubmit" class="row">
+        <div v-if="error" class="alert alert-danger">{{ error }}</div>
+        <div class="form-group col-md-4">
             <label for="exampleInputEmail1">Email address</label>
             <input type="email" v-model="email" class="form-control" id="exampleInputEmail1"
                    aria-describedby="emailHelp" placeholder="Enter email">
+
         </div>
-        <div class="form-group">
+        <div class="form-group col-md-4">
             <label for="exampleInputPassword1">Password</label>
             <input type="password" v-model="password" class="form-control"
                    id="exampleInputPassword1" placeholder="Password">
         </div>
-        <div class="form-check">
+        <div class="form-check col-md-2">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">I like cheese</label>
         </div>
